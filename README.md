@@ -16,6 +16,7 @@ Python3 and virtualenv are required to run this project. All other dependencies 
 Setup and activate a virtual environment:
 
 `python3 -m virtualenv env`
+
 `source env/bin/activate`
 
 You should see a (env) to the left of your command line directory - this indicates that it was successful.
