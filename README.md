@@ -1,8 +1,11 @@
 # Park Announcement App
 
 This application queries and stores announcements made by the National Park Service. To interact with the application:
+
 1: Choose a Park code from the list here: https://nps-vsp.warnercnr.colostate.edu/showallparkunits.php
+
 2: Input the code on the form while on the localhost:8000 page and click "Add Code"
+
 3: The announcements(if any) will be queried, saved, and displayed. To view all the announcements currently in the database from here, click "View All Announcements"
 
 On the View All Announcements page you can click on individual park codes on the right-most column to find announcements for that park only, add another code, or clear the database.
