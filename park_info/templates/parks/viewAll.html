@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+      tr:nth-child(even) {
+        background: #d6d6d6;
+      }
+    </style>
+    <title>Park Announcements</title>
+  </head>
+  <body>
+    <a class="btn btn-success" href="addCode">Add a New Code</a>
+    <a class="btn btn-danger" href="clearData">Clear Database</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Category</th>
+          <th scope="col">Url</th>
+          <th scope="col">Park Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for announcement in park_announcements %}
+        <tr>
+          <td>{{ announcement.title }}</td>
+          <td>{{ announcement.description }}</td>
+          <td>{{ announcement.category }}</td>
+          <td>{{ announcement.url }}</td>
+          <td>
+            <a class="btn btn-info" href="viewCode/{{ announcement.parkcode }}">
+              {{ announcement.parkcode }}</a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

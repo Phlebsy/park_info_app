@@ -1,0 +1,104 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Park Code Announcements",
+    "description": "This is an example in creating a managed database for an external API ",
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "host": "localhost:8000",
+  "basePath": "/",
+  "schemes": ["http"],
+  "consumes": ["application/form-data"],
+  "produces": ["application/html"],
+  "paths": {
+    "/addCode": {
+      "get": {
+        "description": "Renders HTML form to add park code to database",
+        "produces": ["application/html"],
+        "responses": {
+          "200": {
+            "description": "Base form to add park codes to subscription feed",
+            "schema": {
+              "type": "html"
+            }
+          },
+          "205": {
+            "description": "Redirect on failed addition to database"
+          }
+        }
+      },
+      "post": {
+        "description": "Submits form to backend for processing, adding a list of Announcements that correspond to the ParkCode",
+        "responses": {
+          "401": {
+            "description": "Successful addition to database and redirect to viewCode page",
+            "schema": {
+              "type": "html"
+            }
+          }
+        }
+      }
+    },
+    "/viewCode/<parkCode>": {
+      "get": {
+        "description": "Renders table of announcements for the code included in slug",
+        "produces": "html",
+        "responses": {
+          "200": "Successful render of page"
+        }
+      }
+    },
+    "/viewAll": {
+      "get": {
+        "description": "Renders table of all announcements in the database",
+        "produces": "html",
+        "responses": {
+          "200": "Successful render of page"
+        }
+      }
+    },
+    "/clearData": {
+      "get": {
+        "description": "Clears data within the database and redirects to addCode page",
+        "responses": {
+          "401": "Successful removal of data and Redirect to "
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ParkCode": {
+      "type": "string",
+      "description": "Represents national park abbreviation code"
+    },
+    "Announcement": {
+      "type": "object",
+
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "maxLength": 4,
+          "minLength": 4
+        }
+      }
+    }
+  }
+}

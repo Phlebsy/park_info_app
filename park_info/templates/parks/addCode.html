@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Input a park code from
+        <a href="https://nps-vsp.warnercnr.colostate.edu/showallparkunits.php"
+          >this list</a
+        >
+      </h1>
+      <h3>{{ message }}</h3>
+
+      <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <form method="POST">
+            <input
+              type="text"
+              id="parkCode"
+              class="fadeIn second"
+              name="parkCode"
+              placeholder="Park Code"
+            />
+            <input
+              class="btn btn-success"
+              type="submit"
+              class="fadeIn fourth"
+              value="Add Code"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
